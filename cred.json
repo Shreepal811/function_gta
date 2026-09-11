@@ -1,10 +1,9 @@
 {
   "name": "github-actions-deploy",
   "issuer": "https://token.actions.githubusercontent.com",
-  "subject": "repo:shreepal811/function_gta:ref:refs/heads/main",
+  "subject": "repo:Shreepal811@184873717/function_gta@1364007771:ref:refs/heads/main",
   "audiences": ["api://AzureADTokenExchange"]
 }
-
 
 
 
@@ -17,4 +16,4 @@
 
 //  az ad app federated-credential create `
 // >>   --id 5829781b-dc67-4c5f-be28-b1c77b63d931 `
->>   --parameters "@cred.json"                   
+// >>   --parameters "@cred.json"      
