@@ -20,6 +20,10 @@ on:
 env:
   APPLICATION_NAME: python-app
   DOCKER_USERNAME: shreepalsingh
+  ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  ARM_USE_OIDC: true
 
 jobs:
   flask-build-test-publish-job:
@@ -83,3 +87,22 @@ jobs:
         if: ${{ always() }}
         run: |
           docker rm -f flask-container || true
+
+  terraform:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+
+        - uses: hashicorp/setup-terraform@v3
+
+        - name: Terraform Init
+          run: terraform init
+
+        - name: Terraform Plan
+          run: terraform plan -auto-approve -var-file="dev.tfvars"
+
+        - name: Terraform Apply
+          run: terraform apply -auto-approve -var-file="dev.tfvars"
+
+
+
