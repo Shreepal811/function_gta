@@ -17,6 +17,10 @@ on:
       - synchronize
       - ready_for_review
 
+permissions:
+  id-token: write
+  contents: read
+    
 env:
   APPLICATION_NAME: python-app
   DOCKER_USERNAME: shreepalsingh
