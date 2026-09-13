@@ -1,0 +1,8 @@
+{
+  "name": "github-actions-pr-v3",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:Shreepal811@184873717/function_gta@1364007771:pull_request",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}
