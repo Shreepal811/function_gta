@@ -8,8 +8,8 @@ resource "azurerm_user_assigned_identity" "example" {
 }
 
 resource "azurerm_role_assignment" "roleA" {
-  scope                = azurerm_resource_group.name.id
+  scope                = data.azurerm_resources.example.id
   role_definition_name = "Storage Blob Data Contributor"
-  principal_id         = data.azurerm_resources.example.id
+  principal_id         = azurerm_user_assigned_identity.example.principal_id
 }
 
