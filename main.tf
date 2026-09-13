@@ -1,4 +1,4 @@
-data "azurerm_resources" "example" {
+data "azurerm_resource_group" "example" {
   name = "testRG"
 }
 resource "azurerm_user_assigned_identity" "example" {
