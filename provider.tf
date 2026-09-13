@@ -1,5 +1,3 @@
-# We strongly recommend using the required_providers block to set the
-# Azure Provider source and version being used
 terraform {
   required_providers {
     azurerm = {
@@ -7,10 +5,18 @@ terraform {
       version = "=5.0.0"
     }
   }
+  backend "azurerm" {
+      resource_group_name  = "testRG"
+      storage_account_name = "mysa12"
+      container_name       = "tfstate"
+      key                  = "terraform.tfstate"
+}
 }
 
-# Configure the Microsoft Azure Provider
+
+
 provider "azurerm" {
   features {}
 }
+
 
