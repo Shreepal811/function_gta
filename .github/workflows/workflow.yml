@@ -16,6 +16,8 @@ on:
       - opened
       - ready_for_review
 
+  workflow_dispatch:
+
 permissions:
   id-token: write
   contents: read
