@@ -1,5 +1,5 @@
 data "azurerm_resources" "example" {
-  resource_group_name = "testRG"
+  name = "testRG"
 }
 resource "azurerm_user_assigned_identity" "example" {
   location            = var.location
@@ -8,7 +8,7 @@ resource "azurerm_user_assigned_identity" "example" {
 }
 
 resource "azurerm_role_assignment" "roleA" {
-  scope                = data.azurerm_resources.example.id
+  scope                = data.azurerm_resources_group.example.id
   role_definition_name = "Storage Blob Data Contributor"
   principal_id         = azurerm_user_assigned_identity.example.principal_id
 }
