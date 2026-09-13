@@ -7,12 +7,11 @@
 
 
 
+
 // az role assignment create `
-// >>   --assignee "5829781b-dc67-4c5f-be28-b1c77b63d931" `
-// >>   --role "Contributor" `
-// >>   --scope "/subscriptions/f2b04050-cb3d-46dd-8c59-e50092f68b74/resourceGroups/testRG"
-
-
+//   --assignee "5829781b-dc67-4c5f-be28-b1c77b63d931" `
+//   --role "User Access Administrator" `
+//   --scope "/subscriptions/f2b04050-cb3d-46dd-8c59-e50092f68b74/resourceGroups/testRG"
 
 //  az ad app federated-credential create `
 // >>   --id 5829781b-dc67-4c5f-be28-b1c77b63d931 `
